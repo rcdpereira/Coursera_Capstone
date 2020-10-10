@@ -8,7 +8,9 @@ The source describes both data:
 * Vehicle_Information.csv: every line in the file represents the involvement of a unique vehicle in a unique traffic accident, featuring various vehicle and passenger properties as columns. Date range: 2004-2016.
 The datasets can be merged together through the accident identifier (Accident_Index).
 
-A thorough data evaluation shall be conducted in order to define which features seem to influence the accidents severity. At first, let's take a look at the available features from each dataset.
+## First Data Evaluation - Cleaning
+### Removing non-relevant features
+A thorough evaluation shall be conducted in order to define which features seem to influence the accidents severity. At first, let's take a look at the available features from each dataset.
 From the *Accident_Information.csv* the following features exist: 
 
  0. Accident_Index  
@@ -88,3 +90,18 @@ From Accident_Information.csv:
 16. Location_Easting_OSGR  
 17. Location_Northing_OSGR  
 18. Longitude  
+19. LSOA_of_Accident_Location  
+33. InScotland  
+
+From Vehicle_Information.csv:
+
+10. make  
+11. model  
+12. Propulsion_Code  
+
+Also, the Accidents dataset ranges from year 2005 to 2017, while the Vehicle dataset ranges from 2004 to 2016. Therefore, the rows in the Accidents data where `year == 2017` are be eliminated, while the Vehicles data are cleared of the rows with `year == 2004`.
+
+### Removing "Data missing or out of range"
+After the first step of cleaning data (removing the unwanted columns and years where no intersection exists between the two datasets), an evaluation on the available data is realised to check the frequency of null values (or, as stated in the datasets, Data missing or out of range). If a column contains significant amounts of null values, these have to be removed in order to not compromise the analysis.
+
+
