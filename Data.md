@@ -11,95 +11,40 @@ The datasets can be merged together through the accident identifier (Accident_In
 ## First Data Evaluation - Cleaning
 ### Removing non-relevant features
 A thorough evaluation shall be conducted in order to define which features seem to influence the accidents severity. At first, let's take a look at the available features from each dataset.
+
 From the *Accident_Information.csv* the following features exist: 
 
- 0. Accident_Index  
- 1. 1st_Road_Class  
- 2. 1st_Road_Number  
- 3. 2nd_Road_Class  
- 4. 2nd_Road_Number  
- 5. Accident_Severity  
- 6. Carriageway_Hazards  
- 7. Date  
- 8. Day_of_Week  
- 9. Did_Police_Officer_Attend_Scene_of_Accident  
-10. Junction_Control
-11. Junction_Detail  
-12. Latitude  
-13. Light_Conditions  
-14. Local_Authority_(District)  
-15. Local_Authority_(Highway)  
-16. Location_Easting_OSGR  
-17. Location_Northing_OSGR  
-18. Longitude  
-19. LSOA_of_Accident_Location  
-20. Number_of_Casualties  
-21. Number_of_Vehicles  
-22. Pedestrian_Crossing-Human_Control  
-23. Pedestrian_Crossing-Physical_Facilities  
-24. Police_Force  
-25. Road_Surface_Conditions  
-26. Road_Type  
-27. Special_Conditions_at_Site  
-28. Speed_limit  
-29. Time  
-30. Urban_or_Rural_Area  
-31. Weather_Conditions  
-32. Year  
-33. InScotland  
+ |Table 1:                   |Accident_Information.csv features           |                                  |                                        |
+ |:---                       |:---                                        |:---                              |:---                                    | 
+ |Accident_Index             |1st_Road_Class                              |1st_Road_Number                   |2nd_Road_Class                          | 
+ |2nd_Road_Number            |Accident_Severity                           |Carriageway_Hazards               |Date                                    |
+ |Day_of_Week                |Did_Police_Officer_Attend_Scene_of_Accident |Junction_Control                  |Junction_Detail                         |
+ |Latitude                   |Light_Conditions                            |Local_Authority_(District)        |Local_Authority_(Highway)               |
+ |Location_Easting_OSGR      |Location_Northing_OSGR                      |Longitude                         |LSOA_of_Accident_Location               |
+ |Number_of_Casualties       |Number_of_Vehicles                          |Pedestrian_Crossing-Human_Control |Pedestrian_Crossing-Physical_Facilities |
+ |Police_Force               |Road_Surface_Conditions                     |Road_Type                         |Special_Conditions_at_Site              |
+ |Speed_limit                |Time                                        |Urban_or_Rural_Area               |Weather_Conditions                      |
+ |Year                       |InScotland                                  |  
 
 From the *Vehicle_Information.csv* the features are:
 
- 0. Accident_Index  
- 1. Age_Band_of_Driver  
- 2. Age_of_Vehicle  
- 3. Driver_Home_Area_Type  
- 4. Driver_IMD_Decile  
- 5. Engine_Capacity_.CC.  
- 6. Hit_Object_in_Carriageway  
- 7. Hit_Object_off_Carriageway  
- 8. Journey_Purpose_of_Driver  
- 9. Junction_Location  
-10. make  
-11. model  
-12. Propulsion_Code  
-13. Sex_of_Driver  
-14. Skidding_and_Overturning  
-15. Towing_and_Articulation  
-16. Vehicle_Leaving_Carriageway  
-17. Vehicle_Location.Restricted_Lane  
-18. Vehicle_Manoeuvre  
-19. Vehicle_Reference  
-20. Vehicle_Type  
-21. Was_Vehicle_Left_Hand_Drive  
-22. X1st_Point_of_Impact  
-23. Year  
+|Table 2:                    |Vehicle_Information.csv features            |                                  |                                        |
+|Accident_Index              |Age_Band_of_Driver                          |Age_of_Vehicle                    |Driver_Home_Area_Type                   |
+|Driver_IMD_Decile           |Engine_Capacity_.CC.                        |Hit_Object_in_Carriageway         |Hit_Object_off_Carriageway              |
+|Journey_Purpose_of_Driver   |Junction_Location                           |make                              |model                                   |
+|Propulsion_Code             |Sex_of_Driver                               |Skidding_and_Overturning          |Towing_and_Articulation                 |
+|Vehicle_Leaving_Carriageway |Vehicle_Location.Restricted_Lane            |Vehicle_Manoeuvre                 |Vehicle_Reference                       |
+|Vehicle_Type                |Was_Vehicle_Left_Hand_Drive                 |X1st_Point_of_Impact              |Year                                    |
 
 From the features above, there are several columns that clearly won't have an impact on predicting severity of the accidents. These shall be droped from the assembled dataframes as a first step.
 
 From Accident_Information.csv:
-
- 1. 1st_Road_Class  
- 2. 1st_Road_Number  
- 3. 2nd_Road_Class  
- 4. 2nd_Road_Number 
- 9. Did_Police_Officer_Attend_Scene_of_Accident  
-12. Latitude  
-14. Local_Authority_(District)  
-15. Local_Authority_(Highway)  
-16. Location_Easting_OSGR  
-17. Location_Northing_OSGR  
-18. Longitude  
-19. LSOA_of_Accident_Location  
-33. InScotland  
+**1st_Road_Class, 1st_Road_Number, 2nd_Road_Class, 2nd_Road_Number, Did_Police_Officer_Attend_Scene_of_Accident, Latitude, Local_Authority_(District), Local_Authority_(Highway), Location_Easting_OSGR, Location_Northing_OSGR, Longitude, LSOA_of_Accident_Location, InScotland.**  
 
 From Vehicle_Information.csv:
+**make, model, Propulsion_Code**  
 
-10. make  
-11. model  
-12. Propulsion_Code  
-
-Also, the Accidents dataset ranges from year 2005 to 2017, while the Vehicle dataset ranges from 2004 to 2016. Therefore, the rows in the Accidents data where `year == 2017` are be eliminated, while the Vehicles data are cleared of the rows with `year == 2004`.
+Also, the Accidents dataset ranges from year 2005 to 2017, while the Vehicle dataset ranges from 2004 to 2016. Therefore, the rows in the Accidents data where `year == 2017` are eliminated, while the Vehicles data are cleared of the rows with `year == 2004`.
 
 ### Removing "Data missing or out of range"
 After the first step of cleaning data (removing the unwanted columns and years where no intersection exists between the two datasets), an evaluation on the available data is realised to check the frequency of null values (or, as stated in the datasets, Data missing or out of range). If a column contains significant amounts of null values, these have to be removed in order to not compromise the analysis.
