@@ -29,6 +29,7 @@ From the *Accident_Information.csv* the following features exist:
 From the *Vehicle_Information.csv* the features are:
 
 |Table 2:                    |Vehicle_Information.csv features            |                                  |                                        |
+|:---                        |:---                                        |:---                              |:---                                    |
 |Accident_Index              |Age_Band_of_Driver                          |Age_of_Vehicle                    |Driver_Home_Area_Type                   |
 |Driver_IMD_Decile           |Engine_Capacity_.CC.                        |Hit_Object_in_Carriageway         |Hit_Object_off_Carriageway              |
 |Journey_Purpose_of_Driver   |Junction_Location                           |make                              |model                                   |
