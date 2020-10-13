@@ -38,3 +38,9 @@ After the first step of cleaning data and merging the dataframes, an evaluation 
 >Number of lines remaining after dropping:  1239296
 
 The remaining amount of data seems sufficiently good for generating a model to predict accident severity.
+
+## 2.3 Understanding the Data
+
+An evaluation of each feature is crucial to understand the impacts they may have in the accidents severity. This section presents the final selected features, showing the information each one can provide and explaining why they were selected for prediction.
+
+### Day_of_Week
