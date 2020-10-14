@@ -57,7 +57,7 @@ This section presents a brief descroption about each feature and why they should
 
 **Road_Type:** Single for dual carriageways pose more risk to those involved in the accident? If slip roads are a bigger threat, you should avoid using the highways whenever possible. Right?
 
-**Spped_limit:** The big villain. It self explanatory why this should be here. Next!
+**Speed_limit:** The big villain. It self explanatory why this should be here. Next!
 
 **Time:** Put together with Fridays, the happy hour is after 17:00. The biggest chances to find a drunk driver. Are you going to take it? Or can I convince you to prepare to leave early?
 
@@ -79,6 +79,7 @@ Wow, as expected urban areas have higher amount of accidents. But did you really
 |Snowing no high winds  |       8856|
 |Fog or mist            |       7180|
 |Snowing + high winds   |       1686|
+
 Yeah, most of the accidents will fall under "Fine no high winds". Maybe this one needs a separate analysis removing those 1,028,274 lines. It's still 231,519 data to infer from. Some good can come out of it.
 
 **Age_Band_of_Driver:** Some rental car companies doesn't allow people under 25 years old to rent a car. Are they really the more risky group of drivers? Or are they the ones involved in the most fatal accidents? Lot's of questions that need answer!
