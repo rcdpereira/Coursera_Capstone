@@ -1,4 +1,4 @@
-# 1. Introduction
+# 1. INTRODUCTION
 
 Healthy food has become a trending topic in the past few years. People are paying more attention to what they eat, and how they eat. Several consumers are changing their habits from animal derived goods to plant-based goods, and the interest has increased significantly in the United Kingdom.
 
